@@ -69,19 +69,93 @@ body {
 }
 
 main {
-  background-color: burlywood;
+  background-color: white;
   width: 100%;
-  height: 800px;
+  height: auto;
+  position: relative;
+}
+
+main > * {
+  position: relative;
+  padding-left: 130px;
+}
+
+main::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewX(17deg) rotateX(2deg);
+  background-color: rgb(30, 189, 224);
+  z-index: 0;
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+
+.main-heading {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.work {
+  padding: 10px;
+}
+
+.work-details {
+  border: 2px solid black;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.work-info {
+  padding: 10px;
+}
+
+.work-links {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  justify-content: end;
+  padding-right: 20px;
+}
+
+.work-links > a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.work-links > a:hover {
+  transform: scale(1.2) translateY(-5px);
+  color: rgb(30, 114, 139);
+}
+
+.work-pic {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
 }
 
 footer {
-  background-color: rgb(30, 189, 224);
+  background-color: white;
   width: 100%;
   height: 300px;
   position: relative;
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
 footer > div {
@@ -94,8 +168,8 @@ footer::before {
   left: 0;
   right: 0;
   bottom: 0;
-  transform: skewX(-50deg);
-  background-color: white;
+  transform: skewX(-44deg);
+  background-color: rgb(30, 189, 224);
   z-index: 0;
   position: absolute;
   height: 300px;
@@ -148,7 +222,7 @@ footer::before {
     left: 0;
     right: 0;
     bottom: 0;
-    transform: skewX(-20deg);
+    transform: skewX(-19deg);
     z-index: -1;
     position: absolute;
     height: 100%;
@@ -167,13 +241,32 @@ footer::before {
     margin-bottom: 90px;
   }
 
+  main::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewX(3deg);
+    z-index: 0;
+    position: absolute;
+    height: auto;
+    width: 100%;
+  }
+
+  .works {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 70px;
+  }
+
   footer::before {
     content: "";
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: skewX(-20deg);
+    transform: skewX(-25deg);
     z-index: 0;
     position: absolute;
     height: 300px;
